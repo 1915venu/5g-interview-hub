@@ -70,15 +70,67 @@
   .dd b{color:#e6d6ff}
   .dd i{color:var(--amber);font-style:italic}
   .dd p{margin:0 0 9px}
+  .toolkit{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+  .toolkit a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--brd);border-radius:999px;padding:6px 13px}
+  .toolkit a:hover{border-color:var(--cyan);color:var(--cyan)}
+  .plan-head{font-size:13px;color:var(--ink);background:rgba(168,85,247,.07);border:1px solid rgba(168,85,247,.22);border-radius:10px;padding:11px 14px;margin-bottom:12px}
+  .rhythm{display:grid;gap:8px;margin-bottom:16px}
+  .rblock{background:var(--card);border:1px solid var(--brd);border-radius:10px;padding:10px 13px}
+  .rblock b{color:var(--cyan);font-size:13px}
+  .rblock span{display:block;color:var(--muted);font-size:12.5px;margin-top:3px}
+  .wk-head{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:14px;margin:4px 0 9px}
+  .wk-count{font-size:12px;color:var(--muted);font-family:"JetBrains Mono",monospace}
+  .wk{background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px 14px;margin-bottom:9px;display:flex;gap:11px;align-items:flex-start}
+  .wk.done{opacity:.5}
+  .wkchk{appearance:none;width:17px;height:17px;border:1.5px solid var(--muted);border-radius:5px;margin:2px 0 0;cursor:pointer;flex:0 0 auto;position:relative;background:transparent}
+  .wkchk:checked{background:var(--grad);border-color:transparent}
+  .wkchk:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:#0a0a0f;font-weight:800}
+  .wkbody{flex:1;font-size:13px;min-width:0}
+  .wktop{display:flex;align-items:center;gap:9px;margin-bottom:6px;flex-wrap:wrap}
+  .wknum{font-weight:700;font-family:"JetBrains Mono",monospace;font-size:13.5px}
+  .wkdate{color:var(--muted);font-size:12px}
+  .wkphase{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:5px}
+  .wkline{margin:3px 0;line-height:1.5}
+  .wkline b{display:inline-block;min-width:34px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-right:7px;font-weight:700}
+  .lnk{color:var(--cyan);text-decoration:none;border-bottom:1px dotted rgba(34,211,238,.5);cursor:pointer;font-size:12px;white-space:nowrap}
+  .lnk:hover{color:#7fe9ff}
+  .countdown{background:linear-gradient(90deg,rgba(34,211,238,.10),rgba(168,85,247,.10));border:1px solid rgba(34,211,238,.25);border-radius:12px;padding:11px 15px;margin-bottom:14px;font-size:14px}
+  .countdown b{font-family:"JetBrains Mono",monospace;font-size:17px;color:var(--cyan)}
+  .cd-sub{color:var(--muted);font-size:11.5px}
+  .trk-head{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:14px;margin:18px 0 10px}
+  .trk-add{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:11px}
+  .trk-add input,.trk-add select{background:#070710;border:1px solid var(--brd);border-radius:8px;padding:8px 10px;color:var(--ink);font-family:inherit;font-size:13px}
+  .trk-add input{flex:1;min-width:110px}
+  .trk-add button{background:var(--grad);color:#0a0a0f;border:none;border-radius:8px;padding:8px 15px;font-weight:700;cursor:pointer;font-family:inherit;font-size:13px}
+  .trk-sum{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+  .trk-sum span{font-size:11.5px;border:1px solid var(--brd);border-radius:999px;padding:3px 10px;color:var(--ink)}
+  .trk-empty{color:var(--muted);font-size:13px;padding:10px 0}
+  .job{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.07)}
+  .job:last-child{border-bottom:none}
+  .jc{flex:1;min-width:0}
+  .jcomp{font-weight:600;font-size:13.5px}
+  .jrole{color:var(--muted);font-size:12px}
+  .jstatus{background:#070710;border:1px solid var(--brd);border-radius:7px;padding:5px 7px;color:var(--ink);font-family:inherit;font-size:12px;cursor:pointer}
+  .jdate{color:var(--muted);font-size:11px;font-family:"JetBrains Mono",monospace;white-space:nowrap}
+  .jdel{cursor:pointer;color:var(--muted);border:none;background:none;font-size:17px;line-height:1;padding:0 2px}
+  .jdel:hover{color:#f87171}
 </style>
 
 <div class="wrap">
-  <h1>5G Interview Q&amp;A Hub</h1>
-  <p class="sub">Pitch · Q&amp;A · code — one place per project. Expand, self-test, mark practiced. Progress saves.</p>
-  <div class="how"><b>How to use:</b> read the question, answer it out loud, <i>then</i> reveal to check. Tick “practiced” when it flows without looking. Each project now opens with a <b>60-sec pitch</b> and ends with a <b>Code &amp; Scripts</b> block — the dashed/italic slots are where your real repo files go. <span class="you">[confirm in your impl]</span> and <span class="you">[your specifics]</span> mark answers to verify against your own work.</div>
+  <h1>Prep Hub — 5G + Embedded</h1>
+  <p class="sub">Your daily plan, Q&amp;A, deep dives, code &amp; notes — one launch point. <b>Day 1 = tomorrow.</b></p>
+  <div class="how"><b>How to use:</b> open this every day → do the three blocks in the daily rhythm → tick the week. Each week links to the matching embedded-Linux phase and the matching 5G bank below. For Q&amp;A: read the question, answer aloud, <i>then</i> reveal; tick “practiced” when it flows without looking. <span class="you">[your specifics]</span> marks answers to verify against your own work.</div>
+
+  <div class="toolkit">
+    <a href="https://1915venu.github.io/embedded-linux-plan/" target="_blank" rel="noopener">🐧 Embedded Linux site</a>
+    <a href="https://github.com/1915venu" target="_blank" rel="noopener">🐙 GitHub repos</a>
+  </div>
+  <div id="countdown"></div>
+  <div id="plan"></div>
+  <div id="tracker"></div>
 
   <div class="bar-wrap">
-    <div class="bar-top"><span>Practiced across all projects</span><span class="pct" id="pct">0%</span></div>
+    <div class="bar-top"><span>5G Q&amp;A practiced</span><span class="pct" id="pct">0%</span></div>
     <div class="track"><div class="fill" id="fill"></div></div>
   </div>
   <div id="root"></div>
@@ -189,15 +241,6 @@ code:[
  {q:"Behind a real gNB, thousands of UEs already share one N2 association to the AMF. So how would per-source rate limiting tell your flood from one busy stadium gNB?",a:`That's the core defense dilemma — at the packet level they look alike. The distinguishing signal isn't source IP but the arrival <b>distribution</b> (a synthetic same-millisecond spike vs an organic ramp) and NAS-identity patterns (sequential IMSI blocks vs realistic churn). Hence Gaussian-jitter modeling as future work — testing whether a flood can be shaped to look organic.`},
  {q:"Why registration flooding specifically — highest impact, or just easiest to generate?",a:`Registration is the highest-leverage entry point: it forces the full auth chain (AMF→AUSF→UDM→MongoDB) per UE — maximal backend work per packet — and it's <b>pre-authentication</b>, hitting before any security context exists. Easier floods like RRC stress the RAN, not the core's auth backend. The natural next step is PDU Session Establishment to stress the SMF/UPF on the data plane.`}
 ]},
-{id:"gnb",title:"gNB L2/L3 Integration & Testing",tag:"L2/L3",color:"cyan",
-code:[
- {file:"feature integration diff(s)",note:"The L2/L3 features you owned in the IOS-MCN gNB — name them and paste the key changes.",src:"⬆ this bank is still thin (it has [your specifics] placeholders). Send me a short write-up like you did for paging/SIC/1000-UE and I'll build the full Q&A + drop the code here.",todo:true},
- {file:"interop test harness",note:"How you wired Open5GS + srsRAN UE / UERANSIM against the gNB as reusable, repeatable test infra.",src:"⬆ paste the harness / scripts that automated the interop runs.",todo:true}
-],qs:[
- {q:"What L2/L3 features did you integrate and debug?",a:`<span class="you">[features across MAC/RLC/PDCP/RRC and the system testing you owned]</span>`},
- {q:"How did you set up interoperability testing with third-party core and UE emulators?",a:`Integrated external core (Open5GS) and UE sims (srsRAN UE / UERANSIM) against the gNB as reusable, repeatable test infrastructure to accelerate verification. <span class="you">[which emulators, what the harness automated]</span>`},
- {q:"Describe a hard bug you debugged across the L2/L3 boundary.",a:`STAR: symptom → isolate the layer (logs/Wireshark/GDB) → root cause → fix → validation. <span class="you">[your specifics]</span>`}
-]},
 {id:"mi",title:"MobileInsight — C/Python + Qualcomm DIAG",tag:"systems",color:"green",
 repo:"https://github.com/1915venu/mobileinsight-core",
 code:[
@@ -246,6 +289,33 @@ code:[
  {q:"Running a second full receiver in real time — is that feasible on a UE?",a:`It roughly doubles the PBCH→PDCCH→PDSCH→LDPC pipeline per slot, and <b>LDPC decode dominates</b> the cost, so on a real UE it's a serious latency/power problem. Mitigations: trigger SIC only when interference is detected, reuse estimates, use symbol-level cancellation to skip a full decode, or push it into dedicated hardware. Honest prototype-vs-product point.`},
  {q:"How would this extend to intra-cell MU-MIMO or NOMA vs your inter-cell case?",a:`Intra-cell is <b>easier on acquisition</b> — same cell, same timing, and you already have the scheduling DCI, so you cancel co-scheduled layers/users by SINR (or power, for NOMA) ordering. Inter-cell is harder because you must blind-detect the interferer's identity and handle async timing. The core decode→reconstruct→subtract loop is identical.`},
  {q:"Why map the chain on SIB1 rather than a user PDSCH?",a:`SIB1 is <b>always present, deterministic, and known-RNTI</b> (SI-RNTI 0xFFFF), so you can re-acquire it on every golden run as a stable reference target. A user PDSCH needs an attached UE and depends on scheduling. Once the chain is mapped on SIB1, the same buffers and handoffs apply to any PDSCH — including the interferer's.`}
+]},
+{id:"ris",title:"RIS-Aided Doppler & Multipath Mitigation (M.Tech Thesis)",tag:"M.Tech · MATLAB",color:"green",
+pitch:`My M.Tech thesis tackles the high-mobility performance drop in 5G/6G using a <b>Reconfigurable Intelligent Surface (RIS)</b>. I built a complete complex-baseband MATLAB simulation of a 3 GHz MISO downlink — a stationary base station, an N=7-element RIS on a building, M=3 dumb scatterers, and a single-antenna car moving through the field. The core idea: the RIS performs <b>real-time phase counter-rotation</b>, matching and inverting the Doppler phase shift in the air so a chaotic fast-fading channel becomes a stable, near-static link. I then studied the practical trade-offs — hardware phase quantization, and power-maximization vs active interference cancellation.`,
+deepdive:`<h4>The problem</h4><p>High mobility means a large <b>Doppler shift</b>, which collapses the channel's coherence time into fast, time-selective fading. Tracking that normally demands complex, power-hungry equalization at the receiver. The thesis asks: can a smart surface remove the Doppler <i>in the air</i> so the receiver doesn't have to?</p>
+<h4>The system I modelled</h4><p>A <b>MISO downlink in complex baseband</b> at 3 GHz: a stationary base station at (−1000,0), an RIS of <b>N=7</b> elements mounted on a building and driven by the BS over low-latency backhaul, <b>M=3</b> uncontrolled "dumb" scatterers (IOs), and a single-antenna car moving from (0,0) as the only source of dynamics. Complex baseband keeps the phase dynamics cheaply, without simulating GHz carrier cycles.</p>
+<h4>The core trick — Doppler removal by phase counter-rotation</h4><p>Motion rotates the received phase as e^(j2πf_D·t). The RIS controller drives its elements along the <b>conjugate trajectory</b> e^(−j2πf_D·t); in the air the two combine to e^(j0), neutralizing the rotation. That artificially pushes the <b>coherence time toward infinity</b> — a fast-fading channel becomes effectively static, so the car decodes with standard demodulation and no heavy equalizer.</p>
+<h4>Part I — hardware feasibility (quantization)</h4><p>An ideal RIS applies any continuous phase; real hardware (PIN diodes/varactors) only offers a finite <b>b-bit codebook</b>, so the ideal phase is snapped to the nearest state and the leftover <b>quantization error</b> leaks residual Doppler back in. Tested over a DBPSK chain across SNR: <b>1-bit</b> (±90° error) gives a catastrophic irreducible BER floor — a 90° error breaks DBPSK's cross-symbol phase relationship; 2-bit is better but still floored; <b>4-bit</b> (±11.25°) is the sweet spot, landing within <b>0.5 dB</b> of the ideal continuous curve. So affordable low-bit hardware is enough.</p>
+<h4>Part II — interference management</h4><p>Against the M=3 dumb reflectors I compared two strategies. <b>Method 1 (Power Max)</b>: align all N elements with the line-of-sight phase — O(N), highest average power, but it ignores the IO reflections, which keep beating against the signal at different Doppler rates and cause <b>deep multipath fades</b>. <b>Method 2 (Active Cancellation)</b>: minimize the received-envelope <b>variance</b> instead of maximizing power — sample a Doppler interaction matrix every millisecond, search the C(7,3)=<b>35</b> element-to-IO assignments, and force the chosen subset <b>180° out of phase</b> with the interference. It flattens the envelope and kills the fading, at a ~<b>3 dB</b> power penalty (elements diverted from the main beam).</p>
+<h4>Highway vs urban</h4><p>Highway (30 m/s, f_max 100 Hz) is fast but <b>linear and predictable</b> — dynamic range ~12.58 dB, so Method 1 copes. Urban (10 m/s) uses a <b>random-walk</b> model — turns and blockages cause sharp phase jumps and a much wider <b>21.74 dB</b> dynamic range. The city is far more hostile, so Method 2's stability is mandatory there.</p>
+<h4>The honest trade-offs</h4><p>Method 2's combinatorial search was <i>intentional</i> — it sets the true theoretical upper bound at N=7,M=3, but it scales factorially, so a real N=256 surface would need a <b>greedy / matching-pursuit</b> heuristic or a pretrained NN mapping environment→codebook in microseconds. And the RIS itself is <b>passive</b>: it computes nothing — the BS estimates Doppler/multipath from the car's uplink SRS, computes the phase config, and pushes it over backhaul; the surface just applies it.</p>`,
+code:[
+ {file:"ris_doppler_sim.m",note:"Complex-baseband MISO downlink (BS, N=7 RIS, M=3 IOs, moving car) + the phase counter-rotation driving Tc→∞.",src:"⬆ paste your main MATLAB simulation.",todo:true},
+ {file:"quantization_ber.m",note:"b-bit nearest-neighbour codebook mapping + DBPSK BER-vs-SNR sweep (1–5 bit; the 4-bit sweet spot).",src:"⬆ paste the quantization + BER script.",todo:true},
+ {file:"method1_vs_method2.m",note:"Power-max LOS alignment vs active cancellation (variance-min, C(7,3) search); highway + urban runs.",src:"⬆ paste the interference-strategy comparison.",todo:true}
+],qs:[
+ {q:"Walk me through your M.Tech thesis.",a:`I used a <b>Reconfigurable Intelligent Surface</b> to fix the high-mobility performance drop in 5G/6G. I built a complex-baseband MATLAB sim of a 3 GHz MISO downlink — stationary BS, an N=7-element RIS on a building, M=3 dumb scatterers, and a single-antenna car moving through the field. The surface does <b>real-time phase counter-rotation</b> to cancel the Doppler in the air, turning a fast-fading channel near-static. Then I studied two practical trade-offs: hardware phase quantization (Part I) and power-max vs active cancellation (Part II), across highway and urban mobility.`},
+ {q:"What is an RIS, and why use it instead of just Massive MIMO?",a:`An RIS is a <b>passive</b> surface whose many elements each apply a controllable phase shift — a "smart mirror" that re-shapes the wavefront by deflecting existing energy. Two edges over Massive MIMO: <b>no per-element RF chain</b> (no PA/mixer/DAC each), so far more energy-efficient; and it can <b>bend signals around blockages</b> — MIMO can't reach a UE with no line of sight, but an RIS on a building routes around the obstruction.`},
+ {q:"How does the RIS actually 'remove' Doppler — the physics?",a:`Motion rotates the received phase as e^(j2πf_D·t). The controller drives the elements along the <b>conjugate trajectory</b> e^(−j2πf_D·t); in the air the two combine to e^(j0), neutralizing the rotation. That drives the <b>coherence time toward infinity</b> — a time-selective fast-fading link becomes effectively static, so the receiver uses standard demod with no power-hungry equalizer.`},
+ {q:"Why simulate in complex baseband, not at the real carrier?",a:`Complex baseband keeps the <b>phase dynamics and tracking</b> the whole method depends on, without the overhead of modelling 3 GHz carrier cycles. You capture the fine Doppler phase behaviour cheaply — the carrier itself carries nothing you'd lose.`},
+ {q:"What did the quantization study find — the hardware sweet spot?",a:`Real RIS hardware offers only a finite <b>b-bit phase codebook</b>, so the ideal phase snaps to the nearest state and the leftover <b>quantization error</b> leaks residual Doppler. <b>1-bit</b> (±90°) → catastrophic irreducible BER floor; 2-bit better but still floored; <b>4-bit</b> (±11.25°) is the sweet spot — within <b>0.5 dB</b> of an ideal continuous surface. Affordable low-bit hardware is enough.`},
+ {q:"Why does 1-bit quantization specifically destroy the link?",a:`1-bit means only 0° or 180°, so worst-case error is <b>±90°</b>. A 90° rotation breaks the cross-symbol phase relationship that <b>DBPSK</b> relies on, collapsing symbol orthogonality — that's the irreducible floor no amount of SNR can fix.`},
+ {q:"Method 1 vs Method 2 — the difference and the trade-off?",a:`<b>Method 1 (Power Max)</b>: align all N elements to the LOS phase — O(N), highest average power, but it ignores the M=3 reflections, which beat against the signal and cause <b>deep multipath fades</b>. <b>Method 2 (Active Cancellation)</b>: minimize the received-envelope <b>variance</b> — flatten the signal. It kills the fading but costs ~<b>3 dB</b>, since some elements are diverted from the main beam to cancel interference.`},
+ {q:"How does Method 2 actually cancel the interference?",a:`It maintains a <b>Doppler interaction matrix</b> sampled every millisecond, searches the C(7,3)=<b>35</b> ways to assign elements to the 3 interferers, and forces the chosen subset exactly <b>180° out of phase</b> with the incoming interference vectors so they cancel before reaching the car.`},
+ {q:"Why is the urban scenario harder than the highway?",a:`Highway (30 m/s, f_max 100 Hz) is fast but <b>linear and predictable</b> — dynamic range ~12.58 dB, Method 1 copes. Urban (10 m/s) uses a <b>random-walk</b> model — turns and blockages give sharp phase jumps and a wider <b>21.74 dB</b> range. That unpredictability is why Method 2's stability is mandatory in the city.`},
+ {q:"Your Method 2 search is combinatorial — at N=256 it won't fit a 1 ms slot. How do you scale?",a:`Fair — brute force scales factorially. I used it <b>deliberately</b> to establish the theoretical upper bound at N=7,M=3 in a controlled setting. A real deployment swaps it for a low-complexity heuristic — <b>greedy / matching-pursuit</b> selection (polynomial) — or a <b>pretrained neural network</b> mapping the environment straight to codebook choices in microseconds.`},
+ {q:"The RIS is passive — how can it compute a Doppler matrix?",a:`It doesn't — it's a passive executor. The car sends uplink <b>Sounding Reference Signals (SRS)</b>; the <b>base station</b> estimates the Doppler and multipath phase vectors, computes the phase-configuration matrix, and pushes it to the RIS over low-latency <b>backhaul</b>. The surface just applies the phases.`},
+ {q:"Why accept a 3 dB power loss in Method 2?",a:`It depends on the application. For high-throughput downloads, Method 1's peak power wins. But for <b>URLLC / V2X</b> (autonomous-driving signalling) reliability beats throughput — a high-average-power link can still drop packets in a sudden deep fade, whereas flattening the envelope keeps the signal above the decode threshold so it never drops. You trade peak capacity for guaranteed reliability.`}
 ]},
 {id:"phy",title:"5G PHY Fundamentals",tag:"L1 · foundation",color:"cyan",qs:[
  {q:"What is OFDM and why is it used in 5G NR?",a:`It splits a wideband channel into many narrowband subcarriers spaced 1/T apart (orthogonal). Each subcarrier sees ~flat fading, so equalization is a <b>one-tap</b> Y/H per subcarrier instead of a complex wideband equalizer. Bonus: high spectral efficiency (overlapping carriers), flexible 2D time-frequency scheduling, cheap IFFT/FFT implementation, and MIMO-friendly.`},
@@ -323,6 +393,65 @@ function prog(){
   document.getElementById("pct").textContent=`${pct}%  ·  ${done}/${total}`;
   G.forEach(g=>{const gid=g.qs.map((_,qi)=>`${g.id}-${qi}`);const d=gid.filter(i=>state.done[i]).length;const el=document.getElementById("gp-"+g.id);if(el)el.textContent=`${d}/${gid.length}`;});
 }
-document.getElementById("reset").addEventListener("click",()=>{if(!confirm("Clear all practiced marks?"))return;state={done:{}};save();render();});
-load();render();
+document.getElementById("reset").addEventListener("click",()=>{if(!confirm("Clear all practiced marks?"))return;state.done={};save();render();});
+
+const EMB="https://1915venu.github.io/embedded-linux-plan/";
+const PCOL={PREP:"cyan",BUILD:"purple",CONVERT:"green",CLOSE:"amber"};
+const G5NAME={phy:"PHY bank",phyx:"PHY deep probes",pag:"Paging",stress:"1,000-UE flood",sic:"SIC",sicx:"SIC probes",stressx:"1,000-UE probes",meta:"Behavioral"};
+const PLAN={start:"Wed Jun 24, 2026",
+ rhythm:[
+  {block:"🏠 Home day (4–5/week)",detail:"Wake 10 AM. Block A 11 AM–1 PM = Build + Code (the week's embedded topic — type it, build, commit — plus 1–2 LeetCode in C). 8–11 PM recreation. Block B 11:30 PM–12:30 AM = Sell/admin."},
+  {block:"🏢 Office day (2–3/week · IIT Delhi 10 AM–8 PM)",detail:"Daytime is booked with work — skip Block A and push that week's Build onto your home days. Optional: one recall drill on the commute or at lunch. Still do Block B at night."},
+  {block:"🌙 Block B · 11:30 PM–12:30 AM (every day, non-negotiable)",detail:"Low-focus hour: apply + 1–2 LinkedIn messages, run a few 5G recall Qs aloud, tick the week."}
+ ],
+ weeks:[
+  {w:1,dates:"Jun 24–30",phase:"PREP",build:"Embedded Phase 1 — C revision: pointers, bitwise, structs, function pointers, volatile/const, endianness.",emb:"01_phase1.html",code:"Set up LeetCode-in-C; 1 easy/day (arrays, strings).",sell:"Fix resume (projects + repos), polish LinkedIn, and build your target-company + role list with the application links ready. (Applications start W2.)",g5:"phy"},
+  {w:2,dates:"Jul 1–7",phase:"PREP",build:"Embedded Phase 2 — Linux fundamentals: syscalls, fork/exec, mmap, IPC, boot, filesystems.",emb:"02_phase2.html",code:"Two-pointer + linked lists in C.",sell:"Start applying — 8–10 target roles this week (Qualcomm, Ericsson, Nokia, Samsung R&D, MediaTek) + daily recruiter outreach. Warm up 5G PHY recall.",g5:"phy"},
+  {w:3,dates:"Jul 8–14",phase:"BUILD",build:"Embedded Phase 3 — kernel modules: params, printk, kmalloc/vmalloc, error handling, timers.",emb:"03_phase3.html",code:"Bit manipulation + OS/concurrency Qs (mutex vs spinlock, deadlock).",sell:"Polish the 1,000-UE + SIC STAR stories into 90-sec spoken versions.",g5:"stress"},
+  {w:4,dates:"Jul 15–21",phase:"BUILD",build:"Embedded Phase 4 — Character Driver (start): file_operations, copy_to/from_user, ioctl.",emb:"04_phase4.html",code:"Continue C drills; revisit missed problems.",sell:"5G drills: 2 quick-fire Qs/day aloud, then written. Keep applying.",g5:"pag"},
+  {w:5,dates:"Jul 22–28",phase:"BUILD",build:"Embedded Phase 4 — Char Driver: wait queues + blocking I/O, poll, mutex/spinlock. Push to GitHub with README.",emb:"04_phase4.html",code:"C drills + producer/consumer.",sell:"Paging + SIC deep-dive rehearsal. First Pramp mock.",g5:"sic"},
+  {w:6,dates:"Jul 29–Aug 4",phase:"BUILD",build:"Finish + document the Char Driver — your flagship portfolio piece.",emb:"04_phase4.html",code:"Maintain — 1/day.",sell:"Apply 5/week, reply fast. PHY deep-probes drill.",g5:"phyx"},
+  {w:7,dates:"Aug 5–11",phase:"CONVERT",build:"Embedded Phase 5 — Device Tree + platform driver: compatible matching, probe/remove, ioremap/MMIO, IRQ.",emb:"05_phase5.html",code:"1/day + revisit.",sell:"5G mock-answer rehearsal + system design (design a paging flow). Interviews start landing.",g5:"pag"},
+  {w:8,dates:"Aug 12–18",phase:"CONVERT",build:"Embedded Phase 6 — I2C sensor driver (if time): probe, DT match, register I/O, hwmon.",emb:"06_phase6.html",code:"Maintain.",sell:"Company-specific prep the night before each. Run interviews.",g5:"stressx"},
+  {w:9,dates:"Aug 19–25",phase:"CONVERT",build:"Light embedded review — kernel internals appendix.",emb:"09_appendix_kernel.html",code:"Keep sharp.",sell:"Mocks 1–2/weekend; record + review delivery. Interview-execution mode.",g5:"sicx"},
+  {w:10,dates:"Aug 26–Sep 1",phase:"CLOSE",build:"Re-read your own RRC/paging/SIC code so you can whiteboard it cold.",emb:"08_appendix_interviews.html",code:"Don't go cold — 1/day.",sell:"Rehearse full loops: behavioral + system design + 5 STAR stories cold.",g5:"meta"},
+  {w:11,dates:"Sep 2–8",phase:"CLOSE",build:"Spoken-practice appendix — Short / Deep / Follow-up out loud.",emb:"11_interview_practice.html",code:"Maintain.",sell:"Onsite loops; same-day company prep; negotiate offers.",g5:"meta"},
+  {w:12,dates:"Sep 9–15",phase:"CLOSE",build:"Weak-area cleanup across both tracks.",emb:"00_readme.html",code:"Light.",sell:"Pure interview + offer mode. Close.",g5:"phy"}
+ ]};
+function planCount(){return PLAN.weeks.filter(w=>state.plan&&state.plan[w.w]).length;}
+function renderPlanCount(){const el=document.querySelector(".wk-count");if(el)el.textContent=planCount()+"/12 weeks done";}
+function renderPlan(){
+  const p=document.getElementById("plan");if(!p)return;
+  let r=`<div class="plan-head">📅 <b>Day 1 is tomorrow (${PLAN.start}).</b> Open this daily, follow the rhythm below, tick the week. Each week jumps to your embedded phase + the matching 5G bank.</div>`;
+  r+=`<div class="rhythm">`+PLAN.rhythm.map(b=>`<div class="rblock"><b>${b.block}</b><span>${b.detail}</span></div>`).join("")+`</div>`;
+  r+=`<div class="wk-head"><span>12-week roadmap</span><span class="wk-count">${planCount()}/12 weeks done</span></div>`;
+  r+=PLAN.weeks.map(w=>{
+    const dn=state.plan&&state.plan[w.w]?"done":"",ck=state.plan&&state.plan[w.w]?"checked":"";
+    return `<div class="wk ${dn}" data-w="${w.w}"><input type="checkbox" class="wkchk" ${ck}><div class="wkbody"><div class="wktop"><span class="wknum">W${w.w}</span><span class="wkdate">${w.dates}</span><span class="wkphase" style="background:var(--${PCOL[w.phase]});color:#0a0a0f">${w.phase}</span></div><div class="wkline"><b>Build</b>${w.build} <a class="lnk" href="${EMB}${w.emb}" target="_blank" rel="noopener">📖 open</a></div><div class="wkline"><b>Code</b>${w.code}</div><div class="wkline"><b>Sell</b>${w.sell}</div><div class="wkline"><b>5G</b><span class="lnk" data-jump="${w.g5}">${G5NAME[w.g5]} ↓</span></div></div></div>`;
+  }).join("");
+  p.innerHTML=r;
+  p.querySelectorAll(".wkchk").forEach(cb=>cb.addEventListener("change",()=>{const w=cb.closest(".wk").dataset.w;if(!state.plan)state.plan={};state.plan[w]=cb.checked;cb.closest(".wk").classList.toggle("done",cb.checked);save();renderPlanCount();}));
+  p.querySelectorAll("[data-jump]").forEach(j=>j.addEventListener("click",()=>{const g=document.querySelector('.grp[data-g="'+j.dataset.jump+'"]');if(g){g.classList.add("open");g.scrollIntoView({behavior:"smooth",block:"start"});}}));
+}
+function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"})[c]);}
+const TARGET="2026-09-15";
+function renderCountdown(){
+  const c=document.getElementById("countdown");if(!c)return;
+  const t=new Date(TARGET+"T00:00:00");const d=Math.ceil((t-new Date())/86400000);
+  c.innerHTML=`<div class="countdown">⏳ <b>${d>0?d:0} days</b> to target · ${t.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})} <span class="cd-sub">(12-week plan finish — tell me to change the date)</span></div>`;
+}
+const STATUSES=["Applied","Interview","Offer","Rejected"];
+function renderTracker(){
+  const t=document.getElementById("tracker");if(!t)return;
+  const jobs=state.jobs||[];const counts={};STATUSES.forEach(s=>counts[s]=jobs.filter(j=>j.status===s).length);
+  let h=`<div class="trk-head"><span>📋 Application tracker</span><span class="wk-count">${jobs.length} logged</span></div>`;
+  h+=`<div class="trk-add"><input id="jcomp" placeholder="Company"><input id="jrole" placeholder="Role"><select id="jstat">${STATUSES.map(s=>`<option>${s}</option>`).join("")}</select><button id="jadd">+ Add</button></div>`;
+  h+=`<div class="trk-sum">`+STATUSES.map(s=>`<span>${s}: ${counts[s]}</span>`).join("")+`</div>`;
+  if(!jobs.length){h+=`<div class="trk-empty">No applications yet — add your first in Week 2.</div>`;}
+  else{h+=jobs.slice().reverse().map(j=>`<div class="job" data-id="${j.id}"><div class="jc"><div class="jcomp">${esc(j.company)}</div><div class="jrole">${esc(j.role)||"&nbsp;"}</div></div><select class="jstatus">${STATUSES.map(s=>`<option ${s===j.status?"selected":""}>${s}</option>`).join("")}</select><span class="jdate">${j.date}</span><button class="jdel" title="Delete">×</button></div>`).join("");}
+  t.innerHTML=h;
+  document.getElementById("jadd").onclick=()=>{const c=document.getElementById("jcomp").value.trim(),ro=document.getElementById("jrole").value.trim(),st=document.getElementById("jstat").value;if(!c)return;if(!state.jobs)state.jobs=[];state.jobs.push({id:Date.now(),company:c,role:ro,status:st,date:new Date().toISOString().slice(0,10)});save();renderTracker();};
+  t.querySelectorAll(".job").forEach(row=>{const id=+row.dataset.id;row.querySelector(".jstatus").onchange=e=>{const j=(state.jobs||[]).find(x=>x.id===id);if(j){j.status=e.target.value;save();renderTracker();}};row.querySelector(".jdel").onclick=()=>{if(!confirm("Delete this application?"))return;state.jobs=(state.jobs||[]).filter(x=>x.id!==id);save();renderTracker();};});
+}
+load();renderCountdown();renderTracker();renderPlan();render();
 </script>
